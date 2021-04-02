@@ -5,7 +5,8 @@ class Player {
     this.name = null;
     this.rank=null;
     this.distance=0;
-    
+    this.keyCount = 0;
+    this.moneyCount = 0;
   }
 
   getCount(){
@@ -26,7 +27,9 @@ class Player {
     database.ref(playerIndex).set({
       name:this.name,
       live:this.live,
-      distance: this.distance      
+      distance: this.distance,  
+      key: this.keyCount,
+      score: this.moneyCount
     });
   }
 

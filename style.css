@@ -5,6 +5,7 @@ html, body {
 canvas{
   border: 5px solid black;
 }
-h2{
+h2,h3{
   color:white
 }
+
