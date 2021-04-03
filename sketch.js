@@ -18,6 +18,8 @@ var bg,backgroundImage,gameMap,gamePath;
 var door, doorOpenImg, doorCloseImg;
 var key, keyImage,keysGroup;
 var money,moneyImage,moneyGroup;
+var ghost, ghostImage,ghostGroup, weapon, weaponImage, weaponGroup;
+var position;
 
 function preload(){
   backgroundImage=loadImage("images/deadline image.png");
@@ -33,6 +35,8 @@ function preload(){
   doorCloseImg = loadImage("images/doorclose.png");
   keyImage = loadImage("images/key.png");
   moneyImage = loadImage("images/money.png");
+  ghostImage = loadImage("images/ghost.png");
+  weaponImage = loadImage("images/weapon.png");
   
   
 }
@@ -46,6 +50,9 @@ function setup(){
 
   keysGroup = new Group();
   moneyGroup = new Group();
+  ghostGroup = new Group();
+  weaponGroup = new Group();
+
 
 }
 
@@ -59,6 +66,10 @@ function draw(){
     game.play();
     game.spawnKeys();
     game.spawnMoney();
+  //  game.spawnGhost();
+   // game.spawnWeapon();
+    
+    
   }
   if(gameState === 2){
     game.end();

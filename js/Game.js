@@ -35,6 +35,8 @@ class Game {
     door = createSprite(displayWidth-100,displayHeight/2+60);
     door.addImage(doorCloseImg);
 
+   
+
     survivor1 = createSprite(200,450,20,20);
     survivor1.shapeColor = "blue";
     survivor1.addImage(survivor1_img);
@@ -72,6 +74,22 @@ class Game {
     Player.getPlayerInfo();
     player.getSurvivorsAtEnd();
     //spawnKeys();
+    if(frameCount%200===0){
+
+    ghost = createSprite(0,50);
+    ghost.addImage(ghostImage);
+    ghost.scale = 0.2;
+    ghost.velocityX = 5;
+    ghostGroup.add(ghost);
+    
+    weapon = createSprite(50,100);
+    weapon.addImage(weaponImage);
+    weapon.scale = 0.2;
+    weapon.x = ghost.x;
+    weapon.velocityY = 5;
+    weaponGroup.add(weapon);
+    
+    }
     if(allPlayers !== undefined){
       
       //var display_position = 100;
@@ -174,4 +192,41 @@ class Game {
     moneyGroup.add(money);
     }
   }
+  /*spawnGhost(){
+    if(frameCount%200===0){
+      ghost = createSprite(0,50);
+      ghost.addImage(ghostImage);
+      ghost.scale = 0.2;
+      ghostGroup.add(ghost);
+      position = Math.round(random(1,2));
+   
+    if(position==1)
+    {
+    ghost.x=-0;
+    ghost.velocityX = 5;
+    }
+    else
+    {
+      if(position==2){
+      ghost.x=displayWidth;
+      ghost.velocityX= -5;
+      }
+    }
+      }
+  }*/
+  /*spawnWeapon(){
+   if(frameCount%200===0){
+
+    weapon = createSprite(50,100);
+    weapon.addImage(weaponImage);
+    weapon.scale = 0.2;
+    weapon.x = ghostGroup.x;
+    weapon.velocityY = 5;
+    weaponGroup.add(weapon);
+  }
+}*/
+
+
+
 }
+
